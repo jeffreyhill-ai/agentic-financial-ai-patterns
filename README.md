@@ -114,3 +114,16 @@ The important question is whether the system can show:
 - what should happen next
 
 These are the questions that separate a convincing AI demo from a product architecture a financial institution can actually trust.
+
+## Roadmap
+
+Planned examples:
+
+- source-linked fact schema examples
+- advisor review queue patterns
+- provider-aware data contract examples
+- evaluation patterns for financial fact extraction
+
+## Use / Reuse
+
+Content is shared for discussion, portfolio, and professional context. No license is granted for commercial reuse, redistribution, or derivative use without permission.
