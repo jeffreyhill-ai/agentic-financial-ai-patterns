@@ -10,6 +10,17 @@ The hard part is rarely "calling an API." The hard part is making financial data
 
 ## Patterns
 
+```mermaid
+flowchart LR
+  A["Financial evidence and provider data"] --> B["Provider-aware contracts"]
+  B --> C["Source-linked facts"]
+  C --> D["Review queue"]
+  D --> E["Human approval"]
+  E --> F["Saved artifact or governed tool action"]
+  C --> G["Eval and audit trail"]
+  E --> G
+```
+
 ### Source-linked facts
 
 Financial AI systems should not turn evidence into anonymous prose. Extracted facts need provenance.
@@ -114,6 +125,13 @@ The important question is whether the system can show:
 - what should happen next
 
 These are the questions that separate a convincing AI demo from a product architecture a financial institution can actually trust.
+
+## Concrete Artifacts
+
+- [Source-linked fact schema](schemas/source-linked-fact.schema.json)
+- [Provider data contract schema](schemas/provider-data-contract.schema.json)
+- [Advisor review task schema](schemas/advisor-review-task.schema.json)
+- [Governed financial AI tool contracts](examples/tool-contracts.md)
 
 ## Roadmap
 
