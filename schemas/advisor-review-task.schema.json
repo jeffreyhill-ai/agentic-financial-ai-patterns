@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jeffreyhill-ai/agentic-financial-ai-patterns/schemas/advisor-review-task.schema.json",
+  "title": "AdvisorReviewTask",
+  "type": "object",
+  "required": [
+    "task_id",
+    "review_type",
+    "summary",
+    "proposed_fact_ids",
+    "reason",
+    "recommended_action",
+    "status"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "review_type": {
+      "type": "string",
+      "enum": ["low_confidence", "contradiction", "missing_data", "advisor_judgment", "client_question"]
+    },
+    "summary": { "type": "string" },
+    "proposed_fact_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reason": { "type": "string" },
+    "source_references": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "recommended_action": {
+      "type": "string",
+      "enum": ["approve", "correct", "reject", "ask_client", "request_document", "defer"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["open", "approved", "corrected", "rejected", "deferred"]
+    },
+    "audit": {
+      "type": "object",
+      "properties": {
+        "created_at": { "type": "string", "format": "date-time" },
+        "reviewed_at": { "type": "string", "format": "date-time" },
+        "reviewed_by_role": { "type": "string" }
+      }
+    }
+  }
+}
