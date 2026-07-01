@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/jeffreyhill-ai/agentic-financial-ai-patterns/schemas/provider-data-contract.schema.json",
+  "title": "ProviderAwareDataContract",
+  "type": "object",
+  "required": [
+    "provider",
+    "dataset",
+    "original_identifier",
+    "normalized_identifier",
+    "entitlement_scope",
+    "lineage"
+  ],
+  "properties": {
+    "provider": { "type": "string" },
+    "dataset": { "type": "string" },
+    "original_identifier": {
+      "type": "object",
+      "properties": {
+        "identifier_type": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    },
+    "normalized_identifier": {
+      "type": "object",
+      "properties": {
+        "identifier_type": { "type": "string" },
+        "value": { "type": "string" },
+        "resolution_method": { "type": "string" }
+      }
+    },
+    "taxonomy": {
+      "type": "object",
+      "properties": {
+        "source": { "type": "string" },
+        "classification": { "type": "string" },
+        "version": { "type": "string" }
+      }
+    },
+    "entitlement_scope": {
+      "type": "object",
+      "properties": {
+        "client_or_firm_scope": { "type": "string" },
+        "usage_rights": { "type": "array", "items": { "type": "string" } },
+        "redistribution_allowed": { "type": "boolean" }
+      }
+    },
+    "temporal_context": {
+      "type": "object",
+      "properties": {
+        "as_of_date": { "type": "string", "format": "date" },
+        "effective_date": { "type": "string", "format": "date" },
+        "point_in_time": { "type": "boolean" }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "properties": {
+        "source_payload_reference": { "type": "string" },
+        "transformation_version": { "type": "string" },
+        "attribution_required": { "type": "boolean" }
+      }
+    }
+  }
+}
