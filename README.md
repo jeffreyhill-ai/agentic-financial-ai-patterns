@@ -6,6 +6,8 @@ The focus is not prompt tricks. The focus is behavior architecture: schemas, too
 
 These are the product and platform patterns that make financial AI systems trustworthy enough to operate.
 
+The hard part is rarely "calling an API." The hard part is making financial data from many providers behave like a coherent product surface: identifiers do not line up, taxonomies disagree, entitlements vary by client and region, point-in-time values change, research and news carry attribution obligations, and source lineage matters when the system starts to reason or act.
+
 ## Patterns
 
 ### Source-linked facts
@@ -80,6 +82,24 @@ If an AI API is used, do not claim that no data ever leaves the computer.
 Say:
 
 > Persistent records stay local or firm-controlled. AI payloads are minimized, transient, and reviewable.
+
+### Provider-aware data contracts
+
+Financial data products should not hide provider differences too early. A clean product model still needs to preserve enough source context to explain and debug the result.
+
+Useful contracts often include:
+
+- provider and dataset
+- original identifier and normalized identifier
+- taxonomy or classification source
+- entitlement scope
+- as-of date and effective date
+- point-in-time behavior
+- attribution requirement
+- lineage back to source payload or document
+- transformation/version metadata
+
+When AI is layered on top, these details stop being back-office concerns. They become part of the trust model.
 
 ## Why These Patterns Matter
 
