@@ -4,7 +4,7 @@ Design notes and example patterns for building financial AI systems that are use
 
 The focus is not prompt tricks. The focus is behavior architecture: schemas, tool contracts, review queues, approval gates, source grounding, evals, and audit trails.
 
-This repo is a public proof surface for senior AI/product/platform work: the things that make financial AI systems trustworthy enough to operate.
+These are the product and platform patterns that make financial AI systems trustworthy enough to operate.
 
 ## Patterns
 
