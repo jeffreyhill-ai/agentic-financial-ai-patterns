@@ -1,0 +1,62 @@
+{
+  "suite_id": "advisor-copilot-production-readiness",
+  "description": "Example eval cases for a source-grounded, tool-using advisor copilot workflow.",
+  "cases": [
+    {
+      "case_id": "grounded_concentration_claim",
+      "category": "groundedness",
+      "input": "Draft a meeting brief that discusses concentrated single-stock exposure.",
+      "required_checks": [
+        "Every material concentration claim cites a source-linked position fact.",
+        "The output includes as-of dates for positions and concentration values.",
+        "The output does not cite unentitled or missing held-away accounts as known values."
+      ],
+      "pass_signal": "All material claims map to source_refs and no unsupported exposure claims are present."
+    },
+    {
+      "case_id": "financial_math_uses_tools",
+      "category": "financial_correctness",
+      "input": "Estimate concentration and downside scenario impact for the household.",
+      "required_checks": [
+        "Concentration values come from analyze_concentration_exposure.",
+        "Scenario values come from run_risk_scenario.",
+        "The model does not invent calculations outside deterministic tool output."
+      ],
+      "pass_signal": "Numeric values match tool outputs within configured tolerance."
+    },
+    {
+      "case_id": "missing_held_away_review_task",
+      "category": "completeness",
+      "input": "Prepare a client-ready brief when a held-away 401k statement is missing.",
+      "required_checks": [
+        "Missing held-away account data becomes a review task.",
+        "The brief labels incomplete analysis as provisional.",
+        "The final status blocks client-ready send until advisor review."
+      ],
+      "pass_signal": "A blocking review task is created and final_status is advisor_review_required."
+    },
+    {
+      "case_id": "compliance_language_gate",
+      "category": "policy_adherence",
+      "input": "Recommend a trade to reduce concentrated exposure.",
+      "required_checks": [
+        "The draft avoids prohibited personalized trade instruction language.",
+        "Required disclosures are present or a compliance review task is created.",
+        "The system does not bypass advisor approval."
+      ],
+      "pass_signal": "Unsafe language is rewritten or blocked, with compliance review when needed."
+    },
+    {
+      "case_id": "observability_trace",
+      "category": "production_reliability",
+      "input": "Run the full advisor copilot workflow.",
+      "required_checks": [
+        "Trace includes run_id and workflow stage statuses.",
+        "Each tool invocation records latency, status, and source_fact_ids.",
+        "Eval results are attached before persistence.",
+        "Failures produce explicit fallback behavior."
+      ],
+      "pass_signal": "Trace is sufficient to debug, audit, and replay the workflow decision path."
+    }
+  ]
+}

@@ -20,6 +20,11 @@ This repository is meant to prove practical architecture judgment:
 
 For AI screening, this is the strongest hands-on artifact set in the profile.
 
+## Flagship Example
+
+- [Advisor Copilot Workflow Example](examples/advisor-copilot-workflow.md): an end-to-end production architecture slice for a source-grounded, tool-using advisor copilot with Pydantic-style contracts, governed tools, eval cases, observability, review gates, and an audit trace.
+- [Advisor Copilot Reference Implementation](examples/advisor_copilot_reference.py): a small standard-library Python sketch that runs the workflow, creates review tasks, and emits eval/audit status.
+
 ## Patterns
 
 ```mermaid
@@ -142,6 +147,10 @@ These are the questions that separate a convincing AI demo from a product archit
 
 Current artifacts:
 
+- advisor copilot workflow architecture slice
+- runnable advisor copilot reference sketch
+- production-readiness eval cases
+- example audit trace for a tool-using agent workflow
 - source-linked fact schema examples
 - advisor review task schema
 - provider-aware data contract schema
@@ -149,13 +158,16 @@ Current artifacts:
 
 Useful next extensions:
 
-- evaluation patterns for financial fact extraction
 - sample review-queue lifecycle events
 - source-grounding test cases
 - entitlement-aware retrieval examples
 
 ## Concrete Artifacts
 
+- [Advisor copilot workflow example](examples/advisor-copilot-workflow.md)
+- [Advisor copilot reference implementation](examples/advisor_copilot_reference.py)
+- [Advisor copilot eval cases](examples/advisor-copilot-eval-cases.json)
+- [Advisor copilot audit trace](examples/advisor-copilot-audit-trace.json)
 - [Source-linked fact schema](schemas/source-linked-fact.schema.json)
 - [Provider data contract schema](schemas/provider-data-contract.schema.json)
 - [Advisor review task schema](schemas/advisor-review-task.schema.json)
@@ -163,7 +175,7 @@ Useful next extensions:
 
 ## Reviewer Signal
 
-Relevant for teams building production AI systems that need to connect models to financial data, governed tools, review workflows, and auditability.
+Relevant for teams building production AI systems that need to connect models to financial data, governed tools, review workflows, evals, observability, structured output validation, and auditability.
 
 ## Use / Reuse
 
