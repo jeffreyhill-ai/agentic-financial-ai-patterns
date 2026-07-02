@@ -8,6 +8,18 @@ These are the product and platform patterns that make financial AI systems trust
 
 The hard part is rarely "calling an API." The hard part is making financial data from many providers behave like a coherent product surface: identifiers do not line up, taxonomies disagree, entitlements vary by client and region, point-in-time values change, research and news carry attribution obligations, and source lineage matters when the system starts to reason or act.
 
+## What This Demonstrates
+
+This repository is meant to prove practical architecture judgment:
+
+- source-grounded facts instead of anonymous model prose
+- review queues instead of silent persistence
+- narrow tool contracts instead of unrestricted automation
+- provider-aware data contracts instead of flattened context
+- eval and audit trails as product requirements, not afterthoughts
+
+For AI screening, this is the strongest hands-on artifact set in the profile.
+
 ## Patterns
 
 ```mermaid
@@ -126,6 +138,22 @@ The important question is whether the system can show:
 
 These are the questions that separate a convincing AI demo from a product architecture a financial institution can actually trust.
 
+## Current Artifacts And Next Extensions
+
+Current artifacts:
+
+- source-linked fact schema examples
+- advisor review task schema
+- provider-aware data contract schema
+- governed financial AI tool-contract examples
+
+Useful next extensions:
+
+- evaluation patterns for financial fact extraction
+- sample review-queue lifecycle events
+- source-grounding test cases
+- entitlement-aware retrieval examples
+
 ## Concrete Artifacts
 
 - [Source-linked fact schema](schemas/source-linked-fact.schema.json)
@@ -133,14 +161,9 @@ These are the questions that separate a convincing AI demo from a product archit
 - [Advisor review task schema](schemas/advisor-review-task.schema.json)
 - [Governed financial AI tool contracts](examples/tool-contracts.md)
 
-## Roadmap
+## Reviewer Signal
 
-Planned examples:
-
-- source-linked fact schema examples
-- advisor review queue patterns
-- provider-aware data contract examples
-- evaluation patterns for financial fact extraction
+Relevant for teams building production AI systems that need to connect models to financial data, governed tools, review workflows, and auditability.
 
 ## Use / Reuse
 
