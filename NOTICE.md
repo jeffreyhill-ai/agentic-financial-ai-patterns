@@ -5,4 +5,4 @@ No license is granted for commercial reuse, redistribution, or derivative use wi
 
 ## Public Boundary
 
-This repository contains original, sanitized public material. It does not include employer-owned code, client data, confidential implementation details, proprietary provider integrations, or private project internals.
+This repository contains original public material created for this GitHub account. It does not copy code, documents, data, integrations, product plans, implementation details, or proprietary material from any current or former employer, client, partner, or provider relationship.
