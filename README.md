@@ -18,7 +18,7 @@ This repository is meant to prove practical architecture judgment:
 - provider-aware data contracts instead of flattened context
 - eval and audit trails as product requirements, not afterthoughts
 
-For AI screening, this is the strongest hands-on artifact set in the profile.
+This is the most hands-on artifact set in the profile.
 
 ## Flagship Example
 
@@ -173,7 +173,7 @@ Useful next extensions:
 - [Advisor review task schema](schemas/advisor-review-task.schema.json)
 - [Governed financial AI tool contracts](examples/tool-contracts.md)
 
-## Reviewer Signal
+## Who This Is For
 
 Relevant for teams building production AI systems that need to connect models to financial data, governed tools, review workflows, evals, observability, structured output validation, and auditability.
 
