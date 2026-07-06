@@ -1,7 +1,6 @@
 # Use / Reuse
 
-Content in this repository is shared for discussion, portfolio, and professional context.
-No license is granted for commercial reuse, redistribution, or derivative use without permission.
+Content in this repository is licensed under [CC BY-NC 4.0](LICENSE): you may share and adapt it for noncommercial purposes with attribution. Commercial use requires permission.
 
 ## Public Boundary
 
